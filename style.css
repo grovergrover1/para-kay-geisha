@@ -190,11 +190,9 @@ h2 {
 
   display: flex;
 
-  justify-content:
-    center;
+  justify-content: center;
 
-  align-items:
-    center;
+  align-items: center;
 
   padding:
     18px 7%;
@@ -213,6 +211,7 @@ h2 {
 }
 
 
+/* Logo stays on the left */
 .logo1 {
 
   position: absolute;
@@ -221,6 +220,8 @@ h2 {
 
 }
 
+
+/* Logo text design */
 .logo {
 
   color: white;
@@ -237,11 +238,13 @@ h2 {
 }
 
 
+/* Center navigation */
 .nav-links {
 
   display: flex;
 
-  gap: 25px;
+  gap:
+    25px;
 
 }
 
@@ -267,8 +270,6 @@ h2 {
     var(--gold);
 
 }
-
-
 /* =========================
    HERO
 ========================= */
