@@ -590,41 +590,34 @@ function showSlide(number) {
 
 
 
+/* ADD IT HERE ↓ */
 
-function updateProgress(){
+function updateProgress() {
 
+    const progressText =
+        document.querySelector(".progress-text");
 
-    let totalSlides = slides.length;
-
-    let current = slideNumber + 1;
-
-
-
-    let percent =
-
-        (current / totalSlides) * 100;
+    const progressFill =
+        document.querySelector(".progress-fill");
 
 
+    if (progressText && progressFill) {
 
-    if(progressFill){
+        const current =
+            slideNumber + 1;
+
+        const total =
+            slides.length;
+
+
+        progressText.textContent =
+            current + " / " + total;
+
 
         progressFill.style.width =
-            percent + "%";
+            (current / total * 100) + "%";
 
     }
-
-
-
-    if(progressText){
-
-        progressText.innerHTML =
-
-            current +
-            " / " +
-            totalSlides;
-
-    }
-
 
 }
 
