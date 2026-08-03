@@ -19,7 +19,7 @@ window.addEventListener(
           );
 
       },
-      1200
+      5000
     );
 
   }
