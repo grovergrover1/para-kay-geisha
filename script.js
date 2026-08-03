@@ -542,92 +542,49 @@ setInterval(
    SLIDESHOW NG MGA GUNITA
 ========================= */
 
-
 let slideNumber = 0;
 
 
-const slides =
+const slides = document.querySelectorAll(".slide");
 
-  document.querySelectorAll(
-    ".slide"
-  );
+const progressFill = document.querySelector(".progress-fill");
 
-
-const progressFill =
-
-  document.querySelector(
-    ".progress-fill"
-  );
-
-
-const progressText =
-
-  document.querySelector(
-    ".progress-text"
-  );
+const progressText = document.querySelector(".progress-text");
 
 
 
 function showSlide(number) {
 
 
-  /*
-    balik sa unang larawan
-  */
+    if (number >= slides.length) {
 
-  if(number >= slides.length){
-
-    slideNumber = 0;
-
-  }
-
-
-  /*
-    balik sa huling larawan
-  */
-
-  if(number < 0){
-
-    slideNumber =
-      slides.length - 1;
-
-  }
-
-
-
-  /*
-    alisin active sa lahat
-  */
-
-  slides.forEach(
-
-    function(slide){
-
-      slide
-        .classList
-        .remove(
-          "active"
-        );
+        slideNumber = 0;
 
     }
 
-  );
+
+    if (number < 0) {
+
+        slideNumber = slides.length - 1;
+
+    }
 
 
 
-  /*
-    ipakita ang kasalukuyang larawan
-  */
+    slides.forEach(function(slide){
 
-  slides[slideNumber]
-    .classList
-    .add(
-      "active"
-    );
+        slide.classList.remove("active");
+
+    });
 
 
 
-  updateProgress();
+    slides[slideNumber].classList.add("active");
+
+
+
+    updateProgress();
+
 
 }
 
@@ -637,71 +594,50 @@ function showSlide(number) {
 function updateProgress(){
 
 
-  let total =
-    slides.length;
+    let totalSlides = slides.length;
+
+    let current = slideNumber + 1;
 
 
 
-  let current =
-    slideNumber + 1;
+    let percent =
+
+        (current / totalSlides) * 100;
 
 
 
-  let percentage =
+    if(progressFill){
 
-    (
-      current /
-      total
-    )
-    *
-    100;
+        progressFill.style.width =
+            percent + "%";
+
+    }
 
 
 
-  /*
-    galaw ng progress bar
-  */
+    if(progressText){
 
-  if(progressFill){
+        progressText.innerHTML =
 
-    progressFill.style.width =
-      percentage + "%";
+            current +
+            " / " +
+            totalSlides;
 
-  }
-
-
-
-  /*
-    bilang ng larawan
-  */
-
-  if(progressText){
-
-    progressText.textContent =
-
-      current +
-      " / " +
-      total;
-
-  }
+    }
 
 
 }
 
 
 
-
-/* NEXT / PREVIOUS BUTTON */
 
 function changeSlide(direction){
 
 
-  slideNumber += direction;
+    slideNumber += direction;
 
 
-  showSlide(
-    slideNumber
-  );
+    showSlide(slideNumber);
 
 
 }
@@ -709,33 +645,23 @@ function changeSlide(direction){
 
 
 
-/* AUTOMATIC SLIDESHOW */
+/* AUTO SLIDE */
 
-
-setInterval(
-
-  function(){
+setInterval(function(){
 
 
     slideNumber++;
 
 
-    showSlide(
-      slideNumber
-    );
+    showSlide(slideNumber);
 
 
-  },
-
-  5000
-
-);
+},5000);
 
 
 
-/*
-  unang display
-*/
+
+/* START */
 
 showSlide(0);
 /* =========================
