@@ -172,10 +172,6 @@ h2 {
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
-
 .navbar {
 
   position: fixed;
@@ -211,7 +207,7 @@ h2 {
 }
 
 
-/* Logo stays on the left */
+/* Logo stays left */
 .logo1 {
 
   position: absolute;
@@ -221,7 +217,7 @@ h2 {
 }
 
 
-/* Logo text design */
+/* Logo design */
 .logo {
 
   color: white;
@@ -238,7 +234,7 @@ h2 {
 }
 
 
-/* Center navigation */
+/* Links stay centered */
 .nav-links {
 
   display: flex;
