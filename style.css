@@ -634,6 +634,46 @@ h2 {
 }
 
 
+.counter-card {
+
+  width:
+    auto;
+
+  min-width:
+    0;
+
+  padding:
+    30px 15px;
+
+  border:
+
+    1px solid
+
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+
+  border-radius:
+    20px;
+
+  background:
+
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  backdrop-filter:
+    blur(10px);
+
+}
+
+
 /* =========================
    COUNTER
 ========================= */
@@ -683,18 +723,32 @@ h2 {
 }
 
 
+/* =========================
+   COUNTER CARDS
+========================= */
+
 .counter {
 
-  display: flex;
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
 
   justify-content:
     center;
 
   gap:
-    25px;
+    18px;
+
+  width:
+    min(1100px, 95%);
 
   margin:
-    45px 0 25px;
+    45px auto 25px;
+
+  padding:
+    0 20px;
 
 }
 
@@ -702,7 +756,10 @@ h2 {
 .counter-card {
 
   width:
-    180px;
+    auto;
+
+  min-width:
+    0;
 
   padding:
     30px 15px;
@@ -733,33 +790,106 @@ h2 {
   backdrop-filter:
     blur(10px);
 
+  -webkit-backdrop-filter:
+    blur(10px);
+
+  box-shadow:
+
+    0 12px 30px
+
+    rgba(
+      0,
+      0,
+      0,
+      0.15
+    );
+
+  transition:
+
+    transform 0.3s ease,
+
+    background 0.3s ease;
+
 }
 
 
+/* EFFECT KAPAG NAKA-HOVER */
+
+.counter-card:hover {
+
+  transform:
+    translateY(-6px);
+
+  background:
+
+    rgba(
+      255,
+      255,
+      255,
+      0.13
+    );
+
+}
+
+
+/* MGA NUMERO */
+
 .counter-card span {
 
-  display: block;
+  display:
+    block;
 
   color:
     var(--gold);
 
   font-size:
-    55px;
+    clamp(
+      40px,
+      5vw,
+      55px
+    );
 
   font-family:
+
     "Cormorant Garamond",
     serif;
 
   font-weight:
     700;
 
+  line-height:
+    1;
+
 }
 
+
+/* MGA LABEL */
 
 .counter-card p {
 
   margin:
-    5px 0 0;
+    10px 0 0;
+
+  color:
+
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+
+  font-size:
+    13px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    2px;
+
+  text-transform:
+    uppercase;
 
 }
 
@@ -776,156 +906,132 @@ h2 {
 
 
 /* =========================
-   PHOTO GALLERY
+   TABLET
 ========================= */
 
-.gallery {
+@media (
+  max-width: 900px
+) {
 
-  background:
-    #edf4ff;
+  .counter {
 
-}
+    grid-template-columns:
+      repeat(3, 1fr);
 
-
-.gallery-description {
-
-  max-width:
-    600px;
-
-  margin:
-    auto;
-
-  line-height:
-    1.8;
+  }
 
 }
 
 
-.photo-grid {
+/* =========================
+   CELLPHONE
+========================= */
 
-  display: grid;
+@media (
+  max-width: 700px
+) {
 
-  grid-template-columns:
+  .counter {
 
-    repeat(
-      2,
-      minmax(
-        0,
-        1fr
-      )
-    );
+    grid-template-columns:
+      repeat(2, 1fr);
 
-  gap:
-    28px;
+    gap:
+      12px;
 
-  max-width:
-    1050px;
+    width:
+      100%;
 
-  margin:
-    60px auto 0;
+    padding:
+      0 15px;
 
-}
-
-
-.photo-card {
-
-  position: relative;
-
-  height:
-    430px;
-
-  overflow:
-    hidden;
-
-  border-radius:
-    22px;
-
-  cursor:
-    pointer;
-
-  box-shadow:
-
-    0 18px 45px
-
-    rgba(
-      7,
-      26,
-      61,
-      0.18
-    );
-
-}
+  }
 
 
-.photo-card img {
+  .counter-card {
 
-  width:
-    100%;
+    padding:
+      22px 8px;
 
-  height:
-    100%;
+    border-radius:
+      16px;
 
-  object-fit:
-    cover;
-
-  transition:
-    transform 0.7s;
-
-}
+  }
 
 
-.photo-card:hover img {
+  .counter-card span {
 
-  transform:
-    scale(1.1);
+    font-size:
+      45px;
+
+  }
+
+
+  .counter-card p {
+
+    font-size:
+      11px;
+
+    letter-spacing:
+      1px;
+
+  }
+
+
+  /*
+    Igitna ang huling card
+    na "Segundo".
+  */
+
+  .counter-card:last-child {
+
+    grid-column:
+      1 / -1;
+
+    width:
+      50%;
+
+    justify-self:
+      center;
+
+  }
 
 }
 
 
-.photo-overlay {
+/* =========================
+   MALILIIT NA CELLPHONE
+========================= */
 
-  position: absolute;
+@media (
+  max-width: 380px
+) {
 
-  inset: 0;
+  .counter {
 
-  display: flex;
+    gap:
+      9px;
 
-  align-items:
-    end;
+    padding:
+      0 10px;
 
-  padding:
-    25px;
-
-  color:
-    white;
-
-  opacity: 0;
-
-  background:
-
-    linear-gradient(
-
-      transparent,
-
-      rgba(
-        4,
-        17,
-        39,
-        0.9
-      )
-
-    );
-
-  transition:
-    0.4s;
-
-}
+  }
 
 
-.photo-card:hover
-.photo-overlay {
+  .counter-card {
 
-  opacity: 1;
+    padding:
+      18px 5px;
+
+  }
+
+
+  .counter-card span {
+
+    font-size:
+      38px;
+
+  }
 
 }
 
