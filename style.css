@@ -2090,5 +2090,67 @@ footer {
 
 }
 
+/* =========================
+   LETTER DATE
+========================= */
+
+.letter-date {
+
+  margin:
+
+    45px 0 5px;
+
+  text-align:
+
+    center;
+
+  color:
+
+    var(--gold);
+
+  font-family:
+
+    "Great Vibes",
+    cursive;
+
+  font-size:
+
+    42px;
+
+  line-height:
+
+    1;
+
+}
+
+
+/* =========================
+   LETTER SIGNATURE
+========================= */
+
+.letter-signature {
+
+  margin:
+
+    15px 0 0;
+
+  text-align:
+
+    right;
+
+  color:
+
+    #06152f;
+
+  font-family:
+
+    "Great Vibes",
+    cursive;
+
+  font-size:
+
+    38px;
+
+}
 
 
