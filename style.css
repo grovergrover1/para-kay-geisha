@@ -2153,79 +2153,47 @@ footer {
 
 }
 
-/* =========================
-   MUSIC BUTTON
-========================= */
-
 .music-button {
 
-  position:
-    fixed;
+  position: fixed;
 
-  top:
-    20px;
+  top: 20px;
 
-  right:
-    20px;
+  right: 20px;
 
-  z-index:
-    9999;
+  z-index: 999999;
 
-  padding:
-    13px 18px;
+  display: block;
 
-  border:
+  visibility: visible;
 
-    1px solid
+  opacity: 1;
 
-    rgba(
-      255,
-      255,
-      255,
-      0.35
-    );
+  padding: 13px 18px;
 
-  border-radius:
-    50px;
+  border: 1px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-radius: 50px;
 
   background:
+    rgba(6, 21, 47, 0.92);
 
-    rgba(
-      6,
-      21,
-      47,
-      0.92
-    );
-
-  color:
-    white;
+  color: white;
 
   font-family:
     "Cormorant Garamond",
     serif;
 
-  font-size:
-    17px;
+  font-size: 17px;
 
-  cursor:
-    pointer;
+  cursor: pointer;
 
   box-shadow:
-
     0 8px 25px
-
-    rgba(
-      0,
-      0,
-      0,
-      0.3
-    );
+    rgba(0, 0, 0, 0.3);
 
   backdrop-filter:
     blur(10px);
 
-  transition:
-    0.3s;
-
 }
-
