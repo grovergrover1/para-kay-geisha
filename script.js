@@ -649,7 +649,7 @@ setInterval(function(){
     showSlide(slideNumber);
 
 
-},5000);
+},8000);
 
 
 
