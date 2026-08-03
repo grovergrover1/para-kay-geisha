@@ -861,7 +861,7 @@ function toggleMusic() {
 
     musicText.textContent =
 
-      "Musika";
+      "Play mo :(";
 
 
     musicButton
