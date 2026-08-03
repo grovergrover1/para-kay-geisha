@@ -746,3 +746,27 @@ setInterval(
   5000
 
 );
+
+
+/* =========================
+   MUSIC VOLUME
+========================= */
+
+const music =
+
+  document.getElementById(
+    "backgroundMusic"
+  );
+
+
+if (
+
+  music
+
+) {
+
+  music.volume =
+
+    0.25;
+
+}
