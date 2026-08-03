@@ -175,7 +175,7 @@ function showFinalMessage() {
 
 "Maligayang Buwanang Pagdiriwang, " +
 
-"aking sinta. 💙";
+"aking Giesha. 💙";
 
 message.innerHTML = "";
 
