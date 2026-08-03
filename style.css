@@ -2197,3 +2197,26 @@ footer {
     blur(10px);
 
 }
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+
+  position:
+    fixed;
+
+  top:
+    20px;
+
+  right:
+    20px;
+
+  z-index:
+    999999;
+
+  width:
+    230px;
+
+}
