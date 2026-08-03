@@ -2204,19 +2204,22 @@ footer {
 
 .music-player {
 
-  position:
-    fixed;
+  position: fixed;
 
-  top:
-    20px;
+  top: 20px;
 
-  right:
-    20px;
+  right: 20px;
 
-  z-index:
-    999999;
+  width: 250px;
 
-  width:
-    230px;
+  height: 45px;
+
+  z-index: 999999;
+
+  display: block;
+
+  visibility: visible;
+
+  opacity: 1;
 
 }
