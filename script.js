@@ -824,7 +824,7 @@ function toggleMusic() {
 
           musicText.textContent =
 
-            "Patayin";
+            "Mahal kita :*";
 
 
           musicButton
