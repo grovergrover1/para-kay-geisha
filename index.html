@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Happy Monthsary, My Love 💙</title>
+
+  <!-- Romantic Google Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Loading Screen -->
+
+  <div class="loader" id="loader">
+
+    <div class="loader-heart">💙</div>
+
+    <p>
+      Isang munting handog na inihanda <br>
+      ko para lamang sa iyo.
+    </p>
+
+  </div>
+
+
+  <!-- Floating Hearts -->
+
+  <div class="floating-hearts" id="floatingHearts"></div>
+
+
+  <!-- Navigation -->
+
+  <nav class="navbar">
+
+    <a href="#home" class="logo">
+      iSeana 💙
+    </a>
+
+    <div class="nav-links">
+
+      <a href="#story">
+        Ating Kwento
+      </a>
+
+      <a href="#memories">
+        Memorya
+      </a>
+
+      <a href="#letter">
+        Liham
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Hero -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <p class="hero-small">
+        Mahal , Minamahal, at Mamahalin
+      </p>
+
+      <!-- Change HER NAME here -->
+
+      <h1>
+        Maligayang anibersaryo ng Buwan,
+        <span>Geisha</span>
+      </h1>
+
+      <p class="hero-message">
+
+        Ang bawat araw na kapiling ka’y nagiging isang gunita na hindi ko kailanman nanaising malimutan.
+
+
+      </p>
+
+      <button
+        class="main-button"
+        onclick="openSurprise()"
+      >
+
+        Buksan mo ang iyong surpresa
+
+        <span>
+          💙
+        </span>
+
+      </button>
+
+    </div>
+
+
+  </section>
+
+
+  <!-- Story -->
+
+  <section class="story section" id="story">
+
+    <p class="section-label">
+
+      Ang ating paglalakbay
+
+    </p>
+
+    <h2>
+
+      ang kwento nating dalawa na hindi matatapos
+
+    </h2>
+
+    <div class="story-box">
+
+      <p>
+
+        May mga taong dumarating sa ating buhay at unti-unting nagiging bahagi ng mga alaalang pinakamamahal natin.
+
+      </p>
+
+      <p>
+
+       Ikaw ang taong nagbibigay ng kakaibang halaga sa mga karaniwang araw, nagpapasaya sa mga payak na sandali, at nagbibigay ng pananabik sa mga panahong darating.
+      </p>
+
+      <p>
+
+      Ang munting pook sapot na ito ay isang paalala lamang kung gaano ko pinahahalagahan ang bawat alaalang ating pinagsasaluhan.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- Monthsary Counter -->
+
+  <section class="counter-section">
+
+    <p class="section-label">
+
+      ANG PANAHONG ATING PINAGSALUHAN
+
+    </p>
+
+    <h2>
+
+      Bawat Sandali ay Mahalaga
+    </h2>
+
+    <p class="counter-description">
+
+      Sa paglipas ng panahon, patuloy tayong lumilikha ng mga alaala nating iingatan
+
+    </p>
+
+    <div class="counter">
+
+      <div class="counter-card">
+
+        <span id="months">
+
+          0
+
+        </span>
+
+        <p>
+
+          Buwan
+
+        </p>
+
+      </div>
+
+
+      <div class="counter-card">
+
+        <span id="days">
+
+          0
+
+        </span>
+
+        <p>
+
+          Araw
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MGA GUNITA -->
+
+<section
+  class="gallery section"
+  id="memories"
+>
+
+  <p class="section-label">
+
+Mga Litrato
+
+  </p>
+
+  <h2>
+
+Ang kayamanang di matutumbasan
+
+  </h2>
+
+  <p class="gallery-description">
+
+
+Bawat larawan ay may taglay na alaalang
+habang-buhay kong iingatan sa aking puso.
+
+
+  </p>
+
+  <!-- SLIDESHOW -->
+
+  <div class="slideshow">
+
+
+<div class="slides">
+
+  <div class="slide active">
+    <img src="1.jpeg" alt="Alaala namin 1">
+    <div class="slide-caption">
+      Ang simula ng ating mga gunita 💙
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="2.jpeg" alt="Alaala namin 2">
+    <div class="slide-caption">
+      Ikaw ang nagpapasaya sa aking araw ✨
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="3.jpeg" alt="Alaala namin 3">
+    <div class="slide-caption">
+      Bawat sandali ay higit na gumaganda dahil sa iyo 💙
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="4.jpeg" alt="Alaala namin 4">
+    <div class="slide-caption">
+      Isang gunita na habang-buhay kong iingatan
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="5.jpeg" alt="Alaala namin 5">
+    <div class="slide-caption">
+      Sa piling mo, payapa ang aking puso
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="6.jpeg" alt="Alaala namin 6">
+    <div class="slide-caption">
+      Ikaw ang aking paboritong kasama
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="7.jpeg" alt="Alaala namin 7">
+    <div class="slide-caption">
+      Mas marami pang alaala ang nais kong likhain kasama ka
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="8.jpeg" alt="Alaala namin 8">
+    <div class="slide-caption">
+      Ang iyong ngiti ay nagbibigay-liwanag sa aking araw
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="9.jpeg" alt="Alaala namin 9">
+    <div class="slide-caption">
+      Sa bawat sandali, lalo kitang pinahahalagahan
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="10.jpeg" alt="Alaala namin 10">
+    <div class="slide-caption">
+      Ang ating kuwento ay isa sa aking pinakamamahal na gunita
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="11.jpeg" alt="Alaala namin 11">
+    <div class="slide-caption">
+      Ikaw ang dahilan kung bakit espesyal ang mga karaniwang araw
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="12.jpeg" alt="Alaala namin 12">
+    <div class="slide-caption">
+      Bawat larawan ay may kuwentong nais kong balikan
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="13.jpeg" alt="Alaala namin 13">
+    <div class="slide-caption">
+      Sa iyo, natagpuan ko ang isang tahanang payapa
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="14.jpeg" alt="Alaala namin 14">
+    <div class="slide-caption">
+      Ang mga munting sandali ay nagiging dakila kapag kapiling ka
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="15.jpeg" alt="Alaala namin 15">
+    <div class="slide-caption">
+      Ang bawat gunita natin ay may natatanging lugar sa aking puso
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="16.jpeg" alt="Alaala namin 16">
+    <div class="slide-caption">
+      Nais kong patuloy na sabayan ang paglipas ng panahon kasama ka
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="17.jpeg" alt="Alaala namin 17">
+    <div class="slide-caption">
+      Ikaw pa rin ang nais kong makasama sa mga darating na araw
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="18.jpg" alt="Alaala namin 18">
+    <div class="slide-caption">
+      Ang ating mga alaala ay mga kayamanang hindi kumukupas
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="19.jpg" alt="Alaala namin 19">
+    <div class="slide-caption">
+      Sa bawat paglipas ng panahon, lalo kong nakikita ang halaga mo
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="20.jpg" alt="Alaala namin 20">
+    <div class="slide-caption">
+      At sa lahat ng gunita, ikaw ang pinakamamahal kong bahagi. 💙
+    </div>
+  </div>
+
+</div>
+
+
+<!-- MGA BUTTON -->
+
+<button
+  class="slide-button previous"
+  onclick="changeSlide(-1)"
+  aria-label="Nakaraang larawan"
+>
+
+  ❮
+
+</button>
+
+
+<button
+  class="slide-button next"
+  onclick="changeSlide(1)"
+  aria-label="Susunod na larawan"
+>
+
+  ❯
+
+</button>
+
+
+<!-- MGA BILOG -->
+
+<div class="slide-dots">
+
+  <button
+    class="dot active"
+    onclick="currentSlide(0)"
+    aria-label="Unang larawan"
+  ></button>
+
+  <button
+    class="dot"
+    onclick="currentSlide(1)"
+    aria-label="Ikalawang larawan"
+  ></button>
+
+  <button
+    class="dot"
+    onclick="currentSlide(2)"
+    aria-label="Ikatlong larawan"
+  ></button>
+
+  <button
+    class="dot"
+    onclick="currentSlide(3)"
+    aria-label="Ikaapat na larawan"
+  ></button>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+
+
+  <!-- Love Letter -->
+
+  <section
+    class="letter-section"
+    id="letter"
+  >
+
+    <p class="section-label">
+
+      Para sa iyo lamang
+
+    </p>
+
+    <h2>
+
+      Isang liham
+      Mula kay Grover
+
+    </h2>
+
+
+    <div
+      class="envelope"
+      id="envelope"
+      onclick="openLetter()"
+    >
+
+      <div class="envelope-flap"></div>
+
+      <div class="envelope-heart">
+
+        💙
+
+      </div>
+
+      <p>
+
+        Pindutin mo ang sobre para mabuksan ang liham ko para sa iyo.
+
+      </p>
+
+    </div>
+
+
+    <article
+      class="love-letter"
+      id="loveLetter"
+    >
+
+      <h3>
+
+        Para kay Geisha,
+
+      </h3>
+
+      <p>
+
+      Sa bawat paglipas ng araw, ay lalo kong 
+      natutuklasan ang ligayang dulot ng iyong 
+      pagdating sa aking buhay. Ang mga sandaling
+       dati’y payak at karaniwan ay nagkaroon ng 
+       bagong ningning sapagkat ikaw ay narito.
+
+      </p>
+
+      <p>
+
+        Ang iyong ngiti ay wari’y sinag ng araw 
+        na nagbibigay-liwanag sa aking daan, at ang
+         iyong tinig ay tila isang himig na nagbibigay
+          ng kapanatagan sa aking puso. Sa bawat 
+          sandaling tayo’y magkasama, ay may gunita 
+          akong nais itago at ingatan magpakailanman.
+      </p>
+
+      <p>
+
+       Nawa’y sa tuwing iyong mababasa ang mga 
+       katagang ito, ay iyong maalala na may isang
+        pusong tapat na lubos na nagpapahalaga sa iyo. 
+        Ang munting handog na ito’y hindi man
+         kasinghalaga ng mga bagay na maaaring ialay
+          ng iba, ito nama’y nilikha nang buong
+           pagmamahal at taos na damdamin.
+           Maligayang buwan ng ating pagmamahalan Geisha!
+      </p>
+
+      <p class="letter-ending">
+
+        Grover, <br>
+        Mahal, Minamahal, at Mamahalin. 💙
+
+
+      </p>
+
+    </article>
+
+  </section>
+
+
+  <!-- Final Surprise -->
+
+  <section class="final-section">
+
+    <div class="final-content">
+
+      <p class="section-label">
+
+        May Isa Pa Akong Sasabihin
+
+      </p>
+
+      <h2>
+
+        Mayroon Pa
+        Isang Huling Bagay
+
+      </h2>
+
+      <button
+        class="main-button"
+        onclick="showFinalMessage()"
+      >
+
+        Tap Here 💙
+
+      </button>
+
+      <div
+        class="final-message"
+        id="finalMessage"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Photo Lightbox -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    onclick="closePhoto()"
+  >
+
+    <span class="close-photo">
+
+      ×
+
+    </span>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Our memory"
+    >
+
+  </div>
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>
+
+      Para sa iyo lamang, Geisha 💙<br>
+      ika-apat ng Agosto, 2026
+
+    </p>
+
+    <p class="footer-heart">
+
+      iSeana©
+
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

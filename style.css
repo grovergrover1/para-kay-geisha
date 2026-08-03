@@ -1,0 +1,1928 @@
+/* =========================
+   GENERAL
+========================= */
+
+:root {
+
+  --navy: #071a3d;
+
+  --navy-light: #102b5c;
+
+  --blue: #2d5fa8;
+
+  --soft-blue: #dce9ff;
+
+  --white: #f8fbff;
+
+  --gold: #d8b36a;
+
+  --text: #17243a;
+
+}
+
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+
+body {
+
+  margin: 0;
+
+  overflow-x: hidden;
+
+  background: var(--white);
+
+  color: var(--text);
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+}
+
+
+section {
+
+  padding:
+    110px 20px;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+}
+
+
+h2 {
+
+  margin:
+    10px 0 25px;
+
+  font-size:
+    clamp(
+      42px,
+      7vw,
+      70px
+    );
+
+  line-height:
+    0.95;
+
+  color:
+    var(--navy);
+
+}
+
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+.loader {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background:
+    var(--navy);
+
+  color:
+    white;
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+
+}
+
+
+.loader.hidden {
+
+  opacity: 0;
+
+  visibility: hidden;
+
+}
+
+
+.loader-heart {
+
+  font-size: 70px;
+
+  animation:
+    heartbeat 1.2s infinite;
+
+}
+
+
+.loader p {
+
+  letter-spacing:
+    2px;
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+
+  position: fixed;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: 0.25;
+
+  animation:
+    floatUp linear forwards;
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  z-index: 100;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  padding:
+    18px 7%;
+
+  background:
+    rgba(
+      7,
+      26,
+      61,
+      0.88
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+}
+
+
+.logo {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    31px;
+
+}
+
+
+.nav-links {
+
+  display: flex;
+
+  gap: 25px;
+
+}
+
+
+.nav-links a {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size:
+    14px;
+
+  transition:
+    0.3s;
+
+}
+
+
+.nav-links a:hover {
+
+  color:
+    var(--gold);
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  text-align:
+    center;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+
+      circle at top,
+
+      rgba(
+        45,
+        95,
+        168,
+        0.7
+      ),
+
+      transparent 45%
+
+    ),
+
+    linear-gradient(
+
+      135deg,
+
+      #041127,
+
+      #0b2554,
+
+      #071a3d
+
+    );
+
+}
+
+
+.hero::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+
+  height: 600px;
+
+  border:
+
+    1px solid
+
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  border-radius:
+    50%;
+
+  animation:
+    rotateCircle
+    25s linear infinite;
+
+}
+
+
+.hero-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width:
+    850px;
+
+  padding:
+    30px;
+
+  color:
+    white;
+
+}
+
+
+.hero-small {
+
+  letter-spacing:
+    5px;
+
+  font-size:
+    13px;
+
+  color:
+    var(--gold);
+
+}
+
+
+.hero h1 {
+
+  margin:
+    20px 0;
+
+  font-size:
+
+    clamp(
+      65px,
+      11vw,
+      120px
+    );
+
+  line-height:
+    0.8;
+
+}
+
+
+.hero h1 span {
+
+  display: block;
+
+  color:
+    var(--soft-blue);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    0.75em;
+
+  margin-top:
+    20px;
+
+}
+
+
+.hero-message {
+
+  max-width:
+    600px;
+
+  margin:
+    35px auto;
+
+  font-size:
+    18px;
+
+  line-height:
+    1.9;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+
+}
+
+
+.main-button {
+
+  border: none;
+
+  padding:
+    17px 34px;
+
+  border-radius:
+    50px;
+
+  background:
+    var(--gold);
+
+  color:
+    var(--navy);
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size:
+    16px;
+
+  font-weight:
+    600;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+
+    0 10px 35px
+
+    rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
+
+  transition:
+    0.35s;
+
+}
+
+
+.main-button:hover {
+
+  transform:
+
+    translateY(-5px)
+
+    scale(1.03);
+
+}
+
+
+.scroll-down {
+
+  position: absolute;
+
+  bottom:
+    25px;
+
+  display: flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    8px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  font-size:
+    12px;
+
+  letter-spacing:
+    2px;
+
+}
+
+
+.scroll-down span {
+
+  font-size:
+    25px;
+
+  animation:
+    bounce 1.5s infinite;
+
+}
+
+
+/* =========================
+   COMMON SECTIONS
+========================= */
+
+.section {
+
+  text-align:
+    center;
+
+}
+
+
+.section-label {
+
+  margin: 0;
+
+  color:
+    var(--blue);
+
+  font-size:
+    12px;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    5px;
+
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+
+  background:
+    var(--white);
+
+}
+
+
+.story-box {
+
+  max-width:
+    760px;
+
+  margin:
+    50px auto 0;
+
+  padding:
+    45px;
+
+  border-left:
+
+    4px solid
+
+    var(--gold);
+
+  background:
+    white;
+
+  text-align:
+    left;
+
+  box-shadow:
+
+    0 20px 60px
+
+    rgba(
+      7,
+      26,
+      61,
+      0.09
+    );
+
+}
+
+
+.story-box p {
+
+  font-size:
+    17px;
+
+  line-height:
+    2;
+
+}
+
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter-section {
+
+  text-align:
+    center;
+
+  color:
+    white;
+
+  background:
+
+    linear-gradient(
+
+      135deg,
+
+      #06152f,
+
+      #123b79
+
+    );
+
+}
+
+
+.counter-section h2 {
+
+  color:
+    white;
+
+}
+
+
+.counter-description {
+
+  color:
+
+    rgba(
+      255,
+      255,
+      255,
+      0.75
+    );
+
+}
+
+
+.counter {
+
+  display: flex;
+
+  justify-content:
+    center;
+
+  gap:
+    25px;
+
+  margin:
+    45px 0 25px;
+
+}
+
+
+.counter-card {
+
+  width:
+    180px;
+
+  padding:
+    30px 15px;
+
+  border:
+
+    1px solid
+
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+
+  border-radius:
+    20px;
+
+  background:
+
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  backdrop-filter:
+    blur(10px);
+
+}
+
+
+.counter-card span {
+
+  display: block;
+
+  color:
+    var(--gold);
+
+  font-size:
+    55px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-weight:
+    700;
+
+}
+
+
+.counter-card p {
+
+  margin:
+    5px 0 0;
+
+}
+
+
+.counter-note {
+
+  font-size:
+    12px;
+
+  opacity:
+    0.5;
+
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery {
+
+  background:
+    #edf4ff;
+
+}
+
+
+.gallery-description {
+
+  max-width:
+    600px;
+
+  margin:
+    auto;
+
+  line-height:
+    1.8;
+
+}
+
+
+.photo-grid {
+
+  display: grid;
+
+  grid-template-columns:
+
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    28px;
+
+  max-width:
+    1050px;
+
+  margin:
+    60px auto 0;
+
+}
+
+
+.photo-card {
+
+  position: relative;
+
+  height:
+    430px;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    22px;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+
+    0 18px 45px
+
+    rgba(
+      7,
+      26,
+      61,
+      0.18
+    );
+
+}
+
+
+.photo-card img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform 0.7s;
+
+}
+
+
+.photo-card:hover img {
+
+  transform:
+    scale(1.1);
+
+}
+
+
+.photo-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items:
+    end;
+
+  padding:
+    25px;
+
+  color:
+    white;
+
+  opacity: 0;
+
+  background:
+
+    linear-gradient(
+
+      transparent,
+
+      rgba(
+        4,
+        17,
+        39,
+        0.9
+      )
+
+    );
+
+  transition:
+    0.4s;
+
+}
+
+
+.photo-card:hover
+.photo-overlay {
+
+  opacity: 1;
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section {
+
+  text-align:
+    center;
+
+  background:
+    white;
+
+}
+
+
+.envelope {
+
+  position: relative;
+
+  width:
+    310px;
+
+  height:
+    210px;
+
+  margin:
+    55px auto;
+
+  display: flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  background:
+    var(--navy);
+
+  color:
+    white;
+
+  border-radius:
+    10px;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+
+    0 20px 50px
+
+    rgba(
+      7,
+      26,
+      61,
+      0.25
+    );
+
+  transition:
+    0.5s;
+
+}
+
+
+.envelope:hover {
+
+  transform:
+
+    translateY(-8px)
+
+    rotate(-1deg);
+
+}
+
+
+.envelope-flap {
+
+  position: absolute;
+
+  top: 0;
+
+  width: 0;
+
+  height: 0;
+
+  border-left:
+
+    155px solid
+
+    transparent;
+
+  border-right:
+
+    155px solid
+
+    transparent;
+
+  border-top:
+
+    105px solid
+
+    #12356d;
+
+}
+
+
+.envelope-heart {
+
+  position: relative;
+
+  z-index: 2;
+
+  font-size:
+    45px;
+
+}
+
+
+.envelope p {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+
+.love-letter {
+
+  display: none;
+
+  max-width:
+    720px;
+
+  margin:
+    auto;
+
+  padding:
+    55px;
+
+  background:
+
+    linear-gradient(
+
+      135deg,
+
+      #ffffff,
+
+      #edf4ff
+
+    );
+
+  border-radius:
+    20px;
+
+  text-align:
+    left;
+
+  box-shadow:
+
+    0 20px 60px
+
+    rgba(
+      7,
+      26,
+      61,
+      0.12
+    );
+
+  animation:
+    letterAppear
+    0.8s ease;
+
+}
+
+
+.love-letter.show {
+
+  display: block;
+
+}
+
+
+.love-letter h3 {
+
+  font-size:
+    48px;
+
+  color:
+    var(--navy);
+
+}
+
+
+.love-letter p {
+
+  line-height:
+    2;
+
+  font-size:
+    17px;
+
+}
+
+
+.letter-ending {
+
+  text-align:
+    center;
+
+  color:
+    var(--blue);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size:
+    36px !important;
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-section {
+
+  min-height:
+    80vh;
+
+  display: flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  text-align:
+    center;
+
+  background:
+
+    linear-gradient(
+
+      135deg,
+
+      #071a3d,
+
+      #123b79
+
+    );
+
+}
+
+
+.final-content {
+
+  max-width:
+    800px;
+
+  color:
+    white;
+
+}
+
+
+.final-content h2 {
+
+  color:
+    white;
+
+}
+
+
+.final-message {
+
+  max-width:
+    650px;
+
+  margin:
+    35px auto 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    36px;
+
+  line-height:
+    1.3;
+
+  color:
+    var(--soft-blue);
+
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: none;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  padding:
+    25px;
+
+  background:
+
+    rgba(
+      0,
+      0,
+      0,
+      0.9
+    );
+
+}
+
+
+.lightbox.show {
+
+  display: flex;
+
+}
+
+
+.lightbox img {
+
+  max-width:
+    90%;
+
+  max-height:
+    88vh;
+
+  border-radius:
+    15px;
+
+}
+
+
+.close-photo {
+
+  position: absolute;
+
+  top:
+    20px;
+
+  right:
+    30px;
+
+  color:
+    white;
+
+  font-size:
+    55px;
+
+  cursor:
+    pointer;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+  padding:
+    35px;
+
+  text-align:
+    center;
+
+  color:
+    white;
+
+  background:
+    #041127;
+
+}
+
+
+.footer-heart {
+
+  font-size:
+    28px;
+
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+
+  50% {
+
+    transform:
+      scale(1.25);
+
+  }
+
+}
+
+
+@keyframes floatUp {
+
+  from {
+
+    transform:
+
+      translateY(110vh)
+
+      rotate(0deg);
+
+  }
+
+  to {
+
+    transform:
+
+      translateY(-20vh)
+
+      rotate(360deg);
+
+  }
+
+}
+
+
+@keyframes rotateCircle {
+
+  from {
+
+    transform:
+      rotate(0);
+
+  }
+
+  to {
+
+    transform:
+      rotate(360deg);
+
+  }
+
+}
+
+
+@keyframes bounce {
+
+  50% {
+
+    transform:
+      translateY(8px);
+
+  }
+
+}
+
+
+@keyframes letterAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media
+(
+  max-width: 700px
+) {
+
+  .navbar {
+
+    padding:
+      15px 20px;
+
+  }
+
+
+  .nav-links {
+
+    display: none;
+
+  }
+
+
+  section {
+
+    padding:
+      85px 18px;
+
+  }
+
+
+  .hero h1 {
+
+    font-size:
+      70px;
+
+  }
+
+
+  .photo-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .photo-card {
+
+    height:
+      460px;
+
+  }
+
+
+  .counter {
+
+    gap:
+      12px;
+
+  }
+
+
+  .counter-card {
+
+    width:
+      145px;
+
+  }
+
+
+  .love-letter {
+
+    padding:
+      30px;
+
+  }
+
+
+  .love-letter h3 {
+
+    font-size:
+      39px;
+
+  }
+
+
+  .story-box {
+
+    padding:
+      30px;
+
+  }
+
+}
+
+/* =========================
+   SLIDESHOW NG MGA GUNITA
+========================= */
+
+.slideshow {
+
+  position: relative;
+
+  width: min(
+    92%,
+    850px
+  );
+
+  height: 520px;
+
+  margin:
+    55px auto 0;
+
+  overflow: hidden;
+
+  border-radius:
+    25px;
+
+  background:
+    var(--navy);
+
+  box-shadow:
+
+    0 25px 65px
+
+    rgba(
+      7,
+      26,
+      61,
+      0.25
+    );
+
+}
+
+
+.slides {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+
+.slide {
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    scale(1.05);
+
+  transition:
+
+    opacity 1s ease,
+
+    transform 6s ease,
+
+    visibility 1s;
+
+}
+
+
+.slide.active {
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    scale(1);
+
+}
+
+
+.slide img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit:
+    cover;
+
+}
+
+
+/* MADILIM NA BAHAGI SA ILALIM */
+
+.slide::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+
+      to top,
+
+      rgba(
+        4,
+        17,
+        39,
+        0.9
+      ),
+
+      transparent 55%
+
+    );
+
+}
+
+
+/* MENSAHE SA BAWAT LARAWAN */
+
+.slide-caption {
+
+  position: absolute;
+
+  z-index: 2;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 45px;
+
+  padding:
+    0 70px;
+
+  color:
+    white;
+
+  text-align:
+    center;
+
+  font-family:
+
+    "Cormorant Garamond",
+
+    serif;
+
+  font-size:
+
+    clamp(
+      27px,
+      4vw,
+      43px
+    );
+
+  line-height:
+    1.15;
+
+}
+
+
+/* MGA BUTTON */
+
+.slide-button {
+
+  position: absolute;
+
+  z-index: 5;
+
+  top: 50%;
+
+  width: 52px;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius:
+    50%;
+
+  transform:
+    translateY(-50%);
+
+  color:
+    white;
+
+  background:
+
+    rgba(
+      7,
+      26,
+      61,
+      0.65
+    );
+
+  font-size:
+    28px;
+
+  cursor:
+    pointer;
+
+  transition:
+    0.3s;
+
+}
+
+
+.slide-button:hover {
+
+  background:
+    var(--gold);
+
+  color:
+    var(--navy);
+
+}
+
+
+.previous {
+
+  left:
+    22px;
+
+}
+
+
+.next {
+
+  right:
+    22px;
+
+}
+
+
+/* MGA BILOG SA ILALIM */
+
+.slide-dots {
+
+  position: absolute;
+
+  z-index: 6;
+
+  left: 50%;
+
+  bottom:
+    18px;
+
+  display: flex;
+
+  gap:
+    10px;
+
+  transform:
+    translateX(-50%);
+
+}
+
+
+.dot {
+
+  width:
+    10px;
+
+  height:
+    10px;
+
+  padding: 0;
+
+  border:
+
+    1px solid
+
+    white;
+
+  border-radius:
+    50%;
+
+  background:
+
+    transparent;
+
+  cursor:
+    pointer;
+
+  transition:
+    0.3s;
+
+}
+
+
+.dot.active {
+
+  width:
+    30px;
+
+  border-radius:
+    20px;
+
+  background:
+    var(--gold);
+
+}
+
+
+/* IPHONE AT IBA PANG MOBILE */
+
+@media
+(
+  max-width: 700px
+) {
+
+  .slideshow {
+
+    width:
+      100%;
+
+    height:
+      480px;
+
+    border-radius:
+      18px;
+
+  }
+
+
+  .slide-caption {
+
+    bottom:
+      55px;
+
+    padding:
+      0 35px;
+
+    font-size:
+      30px;
+
+  }
+
+
+  .slide-button {
+
+    width:
+      43px;
+
+    height:
+      43px;
+
+    font-size:
+      23px;
+
+  }
+
+
+  .previous {
+
+    left:
+      12px;
+
+  }
+
+
+  .next {
+
+    right:
+      12px;
+
+  }
+
+}
+
+.slide-dots {
+
+  max-width: 85%;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+}
