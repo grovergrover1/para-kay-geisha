@@ -542,37 +542,40 @@ setInterval(
    SLIDESHOW NG MGA GUNITA
 ========================= */
 
+
 let slideNumber = 0;
+
 
 const slides =
 
-  document
-    .querySelectorAll(
-      ".slide"
-    );
+  document.querySelectorAll(
+    ".slide"
+  );
 
 
-const dots =
+const progressFill =
 
-  document
-    .querySelectorAll(
-      ".dot"
-    );
+  document.querySelector(
+    ".progress-fill"
+  );
 
 
-function showSlide(
-  number
-) {
+const progressText =
+
+  document.querySelector(
+    ".progress-text"
+  );
+
+
+
+function showSlide(number) {
+
 
   /*
-    Bumalik sa unang larawan
-    kapag lumampas sa huli.
+    balik sa unang larawan
   */
 
-  if (
-    number >=
-    slides.length
-  ) {
+  if(number >= slides.length){
 
     slideNumber = 0;
 
@@ -580,14 +583,10 @@ function showSlide(
 
 
   /*
-    Pumunta sa huling larawan
-    kapag umatras mula sa una.
+    balik sa huling larawan
   */
 
-  if (
-    number <
-    0
-  ) {
+  if(number < 0){
 
     slideNumber =
       slides.length - 1;
@@ -595,16 +594,14 @@ function showSlide(
   }
 
 
+
   /*
-    Alisin ang "active"
-    sa lahat ng larawan.
+    alisin active sa lahat
   */
 
   slides.forEach(
 
-    function (
-      slide
-    ) {
+    function(slide){
 
       slide
         .classList
@@ -617,97 +614,108 @@ function showSlide(
   );
 
 
-  /*
-    Alisin ang "active"
-    sa lahat ng bilog.
-  */
-
-  dots.forEach(
-
-    function (
-      dot
-    ) {
-
-      dot
-        .classList
-        .remove(
-          "active"
-        );
-
-    }
-
-  );
-
 
   /*
-    Ipakita ang
-    kasalukuyang larawan.
+    ipakita ang kasalukuyang larawan
   */
 
-  slides[
-    slideNumber
-  ]
+  slides[slideNumber]
     .classList
     .add(
       "active"
     );
 
 
+
+  updateProgress();
+
+}
+
+
+
+
+function updateProgress(){
+
+
+  let total =
+    slides.length;
+
+
+
+  let current =
+    slideNumber + 1;
+
+
+
+  let percentage =
+
+    (
+      current /
+      total
+    )
+    *
+    100;
+
+
+
   /*
-    I-highlight ang
-    tamang bilog.
+    galaw ng progress bar
   */
 
-  dots[
-    slideNumber
-  ]
-    .classList
-    .add(
-      "active"
-    );
+  if(progressFill){
+
+    progressFill.style.width =
+      percentage + "%";
+
+  }
+
+
+
+  /*
+    bilang ng larawan
+  */
+
+  if(progressText){
+
+    progressText.textContent =
+
+      current +
+      " / " +
+      total;
+
+  }
+
 
 }
 
 
-/* SUSUNOD O NAKARAANG LARAWAN */
 
-function changeSlide(
-  direction
-) {
 
-  slideNumber +=
-    direction;
+/* NEXT / PREVIOUS BUTTON */
+
+function changeSlide(direction){
+
+
+  slideNumber += direction;
 
 
   showSlide(
     slideNumber
   );
 
-}
-
-
-/* PUMILI NG LARAWAN */
-
-function currentSlide(
-  number
-) {
-
-  slideNumber =
-    number;
-
-
-  showSlide(
-    slideNumber
-  );
 
 }
 
 
-/* AWTOMATIKONG PAGLIPAT */
+
+
+/* AUTOMATIC SLIDESHOW */
+
 
 setInterval(
 
-  function () {
+  function(){
+
 
     slideNumber++;
 
@@ -716,6 +724,7 @@ setInterval(
       slideNumber
     );
 
+
   },
 
   5000
@@ -723,6 +732,12 @@ setInterval(
 );
 
 
+
+/*
+  unang display
+*/
+
+showSlide(0);
 /* =========================
    MUSIC VOLUME
 ========================= */
