@@ -770,3 +770,106 @@ if (
     0.25;
 
 }
+
+/* =========================
+   MUSIC CONTROL
+========================= */
+
+const backgroundMusic =
+
+  document
+    .getElementById(
+      "backgroundMusic"
+    );
+
+
+const musicButton =
+
+  document
+    .getElementById(
+      "musicButton"
+    );
+
+
+const musicText =
+
+  document
+    .getElementById(
+      "musicText"
+    );
+
+
+/* SOFT BACKGROUND VOLUME */
+
+backgroundMusic.volume =
+
+  0.20;
+
+
+/* PLAY / PAUSE */
+
+function toggleMusic() {
+
+  if (
+
+    backgroundMusic.paused
+
+  ) {
+
+    backgroundMusic
+      .play()
+      .then(
+
+        function () {
+
+          musicText.textContent =
+
+            "Patayin";
+
+
+          musicButton
+            .classList
+            .add(
+              "playing"
+            );
+
+        }
+
+      )
+
+      .catch(
+
+        function () {
+
+          alert(
+
+            "Hindi mabuksan ang musika."
+
+          );
+
+        }
+
+      );
+
+  }
+
+  else {
+
+    backgroundMusic
+      .pause();
+
+
+    musicText.textContent =
+
+      "Musika";
+
+
+    musicButton
+      .classList
+      .remove(
+        "playing"
+      );
+
+  }
+
+}
