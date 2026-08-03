@@ -303,70 +303,128 @@ setInterval(
    MONTHSARY COUNTER
 ========================= */
 
+/*
+  Nagsimula noong:
+  Hulyo 4, 2025
+  12:00 AM
+*/
+
 const relationshipDate = new Date(
+
   2025,
+
   6,
-  4
+
+  4,
+
+  0,
+
+  0,
+
+  0
+
 );
+
 
 function updateCounter() {
 
   const today = new Date();
 
-  let months =
-    (today.getFullYear() -
-      relationshipDate.getFullYear()) * 12
-    +
-    (today.getMonth() -
-      relationshipDate.getMonth());
-
 
   /*
-    Find the date after the
-    completed number of months.
+    Bilangin ang mga
+    kumpletong buwan.
   */
 
-  let completedMonthDate =
-    new Date(
+  let months =
 
-      relationshipDate
-        .getFullYear(),
+    (
 
-      relationshipDate
-        .getMonth()
-        + months,
+      today.getFullYear()
 
-      relationshipDate
-        .getDate()
+      -
+
+      relationshipDate.getFullYear()
+
+    )
+
+    *
+
+    12
+
+    +
+
+    (
+
+      today.getMonth()
+
+      -
+
+      relationshipDate.getMonth()
 
     );
 
 
   /*
-    If the calculated date is
-    after today, remove one month.
+    Hanapin ang petsa matapos
+    ang mga kumpletong buwan.
+  */
+
+  let completedMonthDate =
+
+    new Date(
+
+      relationshipDate.getFullYear(),
+
+      relationshipDate.getMonth()
+      +
+      months,
+
+      relationshipDate.getDate(),
+
+      relationshipDate.getHours(),
+
+      relationshipDate.getMinutes(),
+
+      relationshipDate.getSeconds()
+
+    );
+
+
+  /*
+    Kung ang petsa ay
+    hindi pa dumarating,
+    bawasan ang buwan.
   */
 
   if (
-    completedMonthDate >
+
+    completedMonthDate
+    >
     today
+
   ) {
 
     months--;
 
 
     completedMonthDate =
+
       new Date(
 
-        relationshipDate
-          .getFullYear(),
+        relationshipDate.getFullYear(),
 
-        relationshipDate
-          .getMonth()
-          + months,
+        relationshipDate.getMonth()
+        +
+        months,
 
-        relationshipDate
-          .getDate()
+        relationshipDate.getDate(),
+
+        relationshipDate.getHours(),
+
+        relationshipDate.getMinutes(),
+
+        relationshipDate.getSeconds()
 
       );
 
@@ -374,50 +432,276 @@ function updateCounter() {
 
 
   /*
-    Calculate only the days
-    remaining after the
-    completed months.
+    Kunin ang natitirang oras
+    pagkatapos ng mga buwan.
   */
 
-  const remainingDays =
+  let remainingTime =
+
+    today
+    -
+    completedMonthDate;
+
+
+  /*
+    ARAW
+  */
+
+  const days =
+
     Math.floor(
 
-      (
-        today -
-        completedMonthDate
-      )
+      remainingTime
 
       /
 
       (
-        1000 *
-        60 *
-        60 *
+
+        1000
+        *
+        60
+        *
+        60
+        *
         24
+
       )
 
     );
 
 
+  remainingTime =
+
+    remainingTime
+
+    %
+
+    (
+
+      1000
+      *
+      60
+      *
+      60
+      *
+      24
+
+    );
+
+
+  /*
+    ORAS
+  */
+
+  const hours =
+
+    Math.floor(
+
+      remainingTime
+
+      /
+
+      (
+
+        1000
+        *
+        60
+        *
+        60
+
+      )
+
+    );
+
+
+  remainingTime =
+
+    remainingTime
+
+    %
+
+    (
+
+      1000
+      *
+      60
+      *
+      60
+
+    );
+
+
+  /*
+    MINUTO
+  */
+
+  const minutes =
+
+    Math.floor(
+
+      remainingTime
+
+      /
+
+      (
+
+        1000
+        *
+        60
+
+      )
+
+    );
+
+
+  remainingTime =
+
+    remainingTime
+
+    %
+
+    (
+
+      1000
+      *
+      60
+
+    );
+
+
+  /*
+    SEGUNDO
+  */
+
+  const seconds =
+
+    Math.floor(
+
+      remainingTime
+
+      /
+
+      1000
+
+    );
+
+
+  /*
+    Ipakita ang buwan.
+  */
+
   document
+
     .getElementById(
       "months"
     )
+
     .textContent =
+
     months;
 
 
+  /*
+    Ipakita ang araw.
+  */
+
   document
+
     .getElementById(
       "days"
     )
+
     .textContent =
-    remainingDays;
+
+    days;
+
+
+  /*
+    Ipakita ang oras.
+  */
+
+  document
+
+    .getElementById(
+      "hours"
+    )
+
+    .textContent =
+
+    String(
+      hours
+    )
+
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  /*
+    Ipakita ang minuto.
+  */
+
+  document
+
+    .getElementById(
+      "minutes"
+    )
+
+    .textContent =
+
+    String(
+      minutes
+    )
+
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  /*
+    Ipakita ang segundo.
+  */
+
+  document
+
+    .getElementById(
+      "seconds"
+    )
+
+    .textContent =
+
+    String(
+      seconds
+    )
+
+    .padStart(
+      2,
+      "0"
+    );
 
 }
 
 
+/*
+  Ipakita agad ang bilang.
+*/
+
 updateCounter();
+
+
+/*
+  I-update bawat isang segundo.
+*/
+
+setInterval(
+
+  updateCounter,
+
+  1000
+
+);
 
 /* =========================
    SLIDESHOW NG MGA GUNITA
