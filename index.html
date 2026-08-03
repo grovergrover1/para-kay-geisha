@@ -49,7 +49,33 @@
 
 
 <body>
+  <!-- BACKGROUND MUSIC -->
 
+  <audio
+    id="backgroundMusic"
+    loop
+    preload="auto"
+  >
+
+    <source
+      src="Music.mp3"
+      type="audio/mpeg"
+    >
+
+  </audio>
+
+
+  <!-- MUSIC BUTTON -->
+
+  <button
+    id="musicButton"
+    class="music-button"
+    onclick="toggleMusic()"
+  >
+
+    🎵 Simulan ang Musika
+
+  </button>
   <!-- Loading Screen -->
 
   <div class="loader" id="loader">
