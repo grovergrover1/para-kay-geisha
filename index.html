@@ -48,25 +48,42 @@
 </head>
 
 
-<body>
   <!-- BACKGROUND MUSIC -->
 
-<audio
-  id="backgroundMusic"
-  controls
-  loop
-  preload="auto"
-  class="music-player"
->
-
-  <source
-    src="Music.mp3"
-    type="audio/mpeg"
+  <audio
+    id="backgroundMusic"
+    loop
+    preload="auto"
   >
 
-  Hindi sinusuportahan ng browser ang audio.
+    <source
+      src="Music.mp3"
+      type="audio/mpeg"
+    >
 
-</audio>
+    Hindi sinusuportahan ng browser ang audio.
+
+  </audio>
+
+
+  <!-- CUSTOM MUSIC BUTTON -->
+
+  <button
+    class="music-button"
+    id="musicButton"
+    onclick="toggleMusic()"
+  >
+
+    <span class="music-icon">
+      🎵
+    </span>
+
+    <span id="musicText">
+      Musika
+    </span>
+
+  </button>
+
   <!-- Loading Screen -->
 
   <div class="loader" id="loader">
