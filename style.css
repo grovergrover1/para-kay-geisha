@@ -1916,45 +1916,34 @@ footer {
 }
 
 
-.dots {
+.dot {
 
-  display:
-    flex;
+  width: 8px;
 
-  justify-content:
-    center;
+  height: 8px;
 
-  align-items:
-    center;
+  border-radius: 50%;
 
-  flex-wrap:
-    wrap;
+  border: none;
 
-  gap:
-    7px;
+  background: rgba(255,255,255,0.6);
 
-  max-width:
-    300px;
+  cursor: pointer;
 
-  margin:
-    20px auto;
+  transition: 0.3s;
 
 }
 
 
 .dot.active {
 
-  width:
-    30px;
+  width: 30px;
 
-  border-radius:
-    20px;
+  border-radius: 20px;
 
-  background:
-    var(--gold);
+  background: var(--gold);
 
 }
-
 
 /* IPHONE AT IBA PANG MOBILE */
 
@@ -2022,13 +2011,41 @@ footer {
 
 }
 
-.slide-dots {
+@media (max-width: 700px) {
 
-  max-width: 85%;
+  .slide-dots {
 
-  flex-wrap: wrap;
+    width: 90%;
 
-  justify-content: center;
+    max-width: none;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    justify-content: center;
+
+    gap: 6px;
+
+  }
+
+
+  .dot {
+
+    flex-shrink: 0;
+
+    width: 7px;
+
+    height: 7px;
+
+  }
+
+
+  .dot.active {
+
+    width: 25px;
+
+  }
 
 }
 
