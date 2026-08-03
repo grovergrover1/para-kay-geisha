@@ -155,70 +155,45 @@ function closePhoto() {
 
 function showFinalMessage() {
 
-  const message =
-
-    document
-      .getElementById(
-        "finalMessage"
-      );
-
+  const message = document.getElementById("finalMessage");
 
   const text =
+    "Gaano man karaming buwan ang lumipas, " +
+    "mananatili akong tapat, mapagmahal, at handang " +
+    "samahan ka sa bawat yugto ng iyong buhay. " +
 
-"Gaano man karaming buwan ang lumipas, " +
+    "Hindi ko man masabi palagi kung gaano kita kamahal, " +
+    "tandaan mong handa akong ibigay ang lahat para lang maramdaman " +
+    "mong mahal na mahal kita. Hindi man kayang tumbasan ng salita " +
+    "ang aking nadarama, sana alam mo na mahal kita kahit ano ang mangyari. " +
 
-"mananatili akong lubos na nagpapasalamat " +
+    "Galingan natin, mahal, para sa ating kinabukasan. " +
+    "Alam kong pagod ka sa trahabo mo araw-araw bilang nars, " +
+    "pero sana ako ang maging lakas mo para patuloy kang lumaban. " +
 
-"sapagkat ikaw ang aking kasama " +
+    "Palagi akong nandito para suportahan ka, pakinggan ka, at samahan ka " +
+    "sa bawat pagsubok na haharapin mo. Huwag mong kalimutan kung gaano kita " +
+    "hinahangaan. " +
 
-"sa napakagandang paglalakbay na ito. " +
-
-"Maligayang Buwanang Pagdiriwang, " +
-
-"aking Geisha. 💙";
-
-message.innerHTML = "";
-
+    "Maligayang Buwanang Pagdiriwang, " +
+    "aking Nars Geisha. 💙";
 
 
   message.innerHTML = "";
 
-
   let number = 0;
 
+  const typing = setInterval(function () {
 
-  const typing =
+    message.innerHTML += text.charAt(number);
 
-    setInterval(
+    number++;
 
-      function () {
+    if (number >= text.length) {
+      clearInterval(typing);
+    }
 
-        message.innerHTML +=
-
-          text.charAt(
-            number
-          );
-
-
-        number++;
-
-
-        if (
-          number >=
-          text.length
-        ) {
-
-          clearInterval(
-            typing
-          );
-
-        }
-
-      },
-
-      35
-
-    );
+  }, 35);
 
 }
 
